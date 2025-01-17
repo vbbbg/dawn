@@ -1,0 +1,42 @@
+{{ 'featured-series.css' | asset_url | stylesheet_tag }}
+
+<div class="featured-series-container">
+    <div class="featured-series-title">特色系列</div>
+
+    {% if section.settings.collection %}
+        <div class="featured-series-item-container">
+            {% for product in section.settings.collection.products %}
+                <div class="featured-series-item item-{{ forloop.index0 }}">
+                    <div class="featured-series-item_img-container">
+                        <img class="" src="{{ product.featured_image | image_url: width: 450 }}" alt="{{ product.title | default: 'Unnamed Product' }}" />
+                    </div>
+
+                    <div class="featured-series-content">
+                        <div class="featured-series-description">
+                            <div class="featured-series-description_index">{{ forloop.index }}</div>
+                            <div class="featured-series-description_text">{{ product.description | strip_html | default: "Unnamed Product" }}</div>
+                        </div>
+
+                        <a class="featured-series-button" href="{{ product.url }}">
+                            立即选购
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+
+{% schema %}
+{
+  "name":"特色系列",
+  "settings":[
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "产品集"
+    }
+  ]
+}
+{% endschema %}
