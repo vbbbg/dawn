@@ -1,0 +1,137 @@
+.featured-series-container {
+    padding: 30px 16px;
+    background: #F0ECE1;
+}
+
+.featured-series-title {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 500;
+    color: #000;
+    padding-bottom: 16px;
+}
+
+.featured-series-item-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 24px;
+}
+
+.featured-series-item_img-container {
+    overflow: hidden;
+}
+
+.featured-series-item-container img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    transition: transform 1s ease; /* 平滑的放大效果 */
+}
+
+.featured-series-item-container img:hover {
+    transform: scale(1.2); /* 鼠标悬停时放大1.2倍 */
+}
+
+.featured-series-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 16px;
+}
+
+.featured-series-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 32px;
+    flex: 1 1 auto;
+}
+
+.featured-series-description {
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.featured-series-description_index {
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 6px 20px 4px;
+    display: inline-block;
+    border-radius: 40px;
+}
+
+.featured-series-description_text {
+    margin-top: 10px;
+}
+
+.featured-series-button {
+    align-self: end;
+    padding: 12px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 40px;
+    color: #000;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    word-break: normal;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.featured-series-item.item-0 {
+    flex: 1 1 auto;
+    background: rgb(246, 225, 99);
+    color: #000;
+}
+
+.featured-series-item.item-0 img {
+    aspect-ratio: 1.73;
+}
+
+.featured-series-item.item-1 {
+    flex: 0 0 32%;
+    background: rgb(44, 93, 171);
+    color: #fff;
+}
+
+.featured-series-item.item-1 img {
+    aspect-ratio: 1.28;
+}
+
+
+
+.featured-series-item.item-1 .featured-series-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-series-item.item-1 .featured-series-button {
+    align-self: start;
+    color: #fff;
+    border-color: #fff;
+}
+
+@media (max-width: 767px) {
+    /* 在屏幕宽度小于等于 767px 时生效的样式 */
+    .featured-series-item-container {
+        flex-direction: column;
+    }
+
+    .featured-series-content {
+        flex-direction: column;
+    }
+
+    .featured-series-button {
+        align-self: start;
+    }
+}
