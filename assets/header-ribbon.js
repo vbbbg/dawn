@@ -2,8 +2,8 @@
 const ribbon = document.querySelector('.ribbon');
 const items = document.querySelectorAll('.ribbon-block');
 
-const itemWidth = items[0]?items[0].offsetWidth:0; // 获取每个条目的宽度
-const totalWidth = itemWidth * items.length; // 所有条目的总宽度
+let itemWidth = items[0]?items[0].offsetWidth:0; // 获取每个条目的宽度
+let totalWidth = itemWidth * items.length; // 所有条目的总宽度
 
 // 控制平移函数
 let currentPosition = 0;  // 当前平移的位置
@@ -34,5 +34,20 @@ function moveRibbon() {
   });
 }
 
+// 处理窗口大小变化
+function updateRibbonDimensions() {
+  // 更新条目宽度和总宽度
+  itemWidth = items[0] ? items[0].offsetWidth : 0;
+  totalWidth = itemWidth * items.length;
+
+  // 确保当前平移位置不会超出新宽度的范围
+  currentPosition = Math.min(currentPosition, 0);
+  ribbon.style.transform = `translateX(${currentPosition}px)`;
+}
+
+// 添加窗口大小变化的事件监听
+window.addEventListener('resize', updateRibbonDimensions);
+
 // 启动动画
 moveRibbon();
+
