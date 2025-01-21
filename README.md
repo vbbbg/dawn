@@ -15,30 +15,19 @@
 - 参考
   - [shopify CLI国内开发配置](https://bingowith.me/2024/09/22/shopify-cli-china-development-setup/)
 
-### 写下第一行代码
+### 了解 Shopify Cli / Shopify Dawn
 
-想了很久，不知道从何开始，决定复刻 [casetify](https://www.casetify.com/)  
-于是便花10分钟编写了 `header-ribbon.liquid`，实现了header绸带功能  
-> 代码写完就明白了 `layout/theme.liquid` 的意义
+Fork [Shopify Dawn](https://github.com/Shopify/dawn) ,将其运行起来
 
-### 设置商品轮播图
+### 了解 Liquid
 
-商品轮播图可以在 shopify 后台设置  
-刚开始体验这个功能我很困惑商品集的链接是怎么生成的  
-后来才知道商品集可以在 Products/Collection 配置，然后里面有个配置可以自定义链接
+[Shopify Liquid](https://shopify.dev/docs/api/liquid)
 
-### 商品列表
+### 了解 Shopify Admin 
 
-接下来，该考虑如何渲染商品列表了  
-经过一段时间的探索，编写了 `sections/featured-series.liquid`  
-目前为止完成的代码，会让你感觉 liquid 没什么神秘的了  
-开发流程基本了解，剩下要做的是去了解常见的技术特性
+在 [Admin后台](https://admin.shopify.com/) 进行操作，配置商店  
+修改 Dawn，使其与商店连接，并发布
 
-### 商品详情
-todo
+### 熟悉 Shopify Dawn
 
-### 购物车
-todo
-
-### 登陆
-todo 
+[Build Shopify themes](https://shopify.dev/docs/storefronts/themes)
