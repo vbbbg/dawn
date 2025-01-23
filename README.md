@@ -31,3 +31,7 @@ Fork [Shopify Dawn](https://github.com/Shopify/dawn) ,将其运行起来
 ### 熟悉 Shopify Dawn
 
 [Build Shopify themes](https://shopify.dev/docs/storefronts/themes)
+
+### 了解 filter
+
+[Shopify Search & Discovery](https://help.shopify.com/en/manual/online-store/search-and-discovery/filters)
