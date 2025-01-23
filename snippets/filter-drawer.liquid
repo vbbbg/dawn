@@ -1,0 +1,48 @@
+<filter-drawer>
+  <div class="filter-drawer" id="FilterDrawer">
+    <div class="filter-drawer__overlay"></div>
+    <div class="filter-drawer__content">
+      <div class="filter-drawer__header">
+        <h2 class="filter-drawer__title">筛选条件</h2>
+        <button
+          type="button"
+          class="filter-drawer__close"
+          aria-label="关闭筛选菜单">
+          {{- 'icon-close.svg' | inline_asset_content -}}
+        </button>
+      </div>
+      <div class="filter-drawer__body">
+        <form id="FilterForm" class="filter-form">
+          {%- for filter in collection.filters -%}
+            <div class="filter-group">
+              <h3 class="filter-group__title">{{ filter.label | escape }}</h3>
+              <div class="filter-group__options">
+                {%- case filter.type -%}
+                  {%- when 'boolean' or 'list' -%}
+                    {%- for value in filter.values -%}
+                      <label class="filter-option">
+                        <input
+                          type="checkbox"
+                          name="{{ filter.param_name }}"
+                          value="{{ value.value }}"
+                          {% if value.active %}
+                          checked{% endif %}>
+                        <span class="filter-option__label">{{ value.label | escape }}</span>
+                      </label>
+                    {%- endfor -%}
+                  {%- when 'price_range' -%}
+                    {%- render 'price-facet'
+                      , filter: filter -%}
+                {%- endcase -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </form>
+      </div>
+      <div class="filter-drawer__footer">
+        <button type="button" class="button button--primary filter-drawer__apply">应用筛选</button>
+        <button type="button" class="button button--secondary filter-drawer__reset">重置</button>
+      </div>
+    </div>
+  </div>
+</filter-drawer>
